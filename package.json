@@ -1,0 +1,28 @@
+{
+  "name": "vue-github-button",
+  "version": "0.1.0",
+  "description": "GitHub button component for Vue.js",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ntkme/vue-github-button.git"
+  },
+  "keywords": [
+    "Vue",
+    "GitHub",
+    "button"
+  ],
+  "author": {
+    "name": "なつき",
+    "email": "i@ntk.me",
+    "url": "https://ntk.me/"
+  },
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/ntkme/vue-github-button/issues"
+  },
+  "homepage": "https://github.com/ntkme/vue-github-button#readme",
+  "dependencies": {
+    "github-buttons": "^1.0.0"
+  }
+}
