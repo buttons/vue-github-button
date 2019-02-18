@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/ntkme/vue-github-button#readme",
   "dependencies": {
-    "github-buttons": "^1.0.0"
+    "github-buttons": "^2.0.0"
   }
 }
