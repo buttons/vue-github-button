@@ -28,11 +28,13 @@ export default {
   },
   methods: {
     paint: function () {
-      render(this.$el.parentNode.insertBefore(this._ = document.createElement('span'), this.$el).appendChild(this.$el), (function(_this) {
-        return function (el) {
-          _this.$el.parentNode.replaceChild(el, _this.$el)
-        }
-      })(this))
+      (function ($el, _) {
+        render($el.parentNode.insertBefore(_, $el).appendChild($el), function (el) {
+          try {
+            _.replaceChild(el, $el)
+          } catch (_) {}
+        })
+      })(this.$el, this._ = document.createElement('span'))
     },
     reset: function () {
       this._.parentNode.replaceChild(this.$el, this._)
