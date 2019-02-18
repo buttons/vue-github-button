@@ -15,19 +15,19 @@ export default {
     } }, this.$slots.default)
   },
   mounted: function () {
-    this.render()
+    this.paint()
   },
   beforeUpdate: function () {
     this.reset()
   },
   updated: function () {
-    this.render()
+    this.paint()
   },
   beforeDestroy: function () {
     this.reset()
   },
   methods: {
-    render: function () {
+    paint: function () {
       render(this.$el.parentNode.insertBefore(this._ = document.createElement('span'), this.$el).appendChild(this.$el), (function(_this) {
         return function (el) {
           _this.$el.parentNode.replaceChild(el, _this.$el)
