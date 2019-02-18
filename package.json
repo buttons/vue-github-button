@@ -1,6 +1,6 @@
 {
   "name": "vue-github-button",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "GitHub button component for Vue.js",
   "main": "index.js",
   "repository": {
