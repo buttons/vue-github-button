@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/ntkme/vue-github-button/issues"
   },
-  "homepage": "https://github.com/ntkme/vue-github-button#readme",
+  "homepage": "https://buttons.github.io/",
   "dependencies": {
     "github-buttons": "^2.2.5"
   }
