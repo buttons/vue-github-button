@@ -4,15 +4,20 @@ export default {
   name: 'github-button',
   props: ['href', 'ariaLabel', 'title', 'dataIcon', 'dataSize', 'dataShowCount', 'dataText'],
   render: function (h) {
-    return h('a', { attrs: {
-      'href': this.href,
-      'aria-label': this.ariaLabel,
-      'title': this.title,
-      'data-icon': this.dataIcon,
-      'data-size': this.dataSize,
-      'data-show-count': this.dataShowCount,
-      'data-text': this.dataText
-    } }, this.$slots.default)
+    return h('span', [
+      h('a', {
+        attrs: {
+          'href': this.href,
+          'aria-label': this.ariaLabel,
+          'title': this.title,
+          'data-icon': this.dataIcon,
+          'data-size': this.dataSize,
+          'data-show-count': this.dataShowCount,
+          'data-text': this.dataText
+        },
+        ref: '_'
+      }, this.$slots.default)
+    ])
   },
   mounted: function () {
     this.paint()
@@ -28,16 +33,15 @@ export default {
   },
   methods: {
     paint: function () {
-      (function ($el, _) {
-        render($el.parentNode.insertBefore(_, $el).appendChild($el), function (el) {
-          try {
-            _.replaceChild(el, $el)
-          } catch (_) {}
-        })
-      })(this.$el, this._ = document.createElement('span'))
+      var _ = this.$el.appendChild(document.createElement('span'))
+      render(_.appendChild(this.$refs._), function (el) {
+        try {
+          _.parentNode.replaceChild(el, _)
+        } catch (_) {}
+      })
     },
     reset: function () {
-      this._.parentNode.replaceChild(this.$el, this._)
+      this.$el.replaceChild(this.$refs._, this.$el.lastChild)
     }
   }
 }
