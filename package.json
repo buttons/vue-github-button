@@ -1,6 +1,6 @@
 {
   "name": "vue-github-button",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "GitHub button component for Vue.js",
   "main": "index.js",
   "repository": {
@@ -23,6 +23,6 @@
   },
   "homepage": "https://buttons.github.io/",
   "dependencies": {
-    "github-buttons": "^2.2.5"
+    "github-buttons": "^2.2.9"
   }
 }
