@@ -1,5 +1,3 @@
-import { render } from 'github-buttons'
-
 export default {
   name: 'github-button',
   props: ['href', 'ariaLabel', 'title', 'dataIcon', 'dataSize', 'dataShowCount', 'dataText'],
@@ -33,11 +31,13 @@ export default {
   },
   methods: {
     paint: function () {
-      var _ = this.$el.appendChild(document.createElement('span'))
-      render(_.appendChild(this.$refs._), function (el) {
-        try {
-          _.parentNode.replaceChild(el, _)
-        } catch (_) {}
+      const _ = this.$el.appendChild(document.createElement('span'))
+      import(/* webpackMode: "eager" */ 'github-buttons').then(({ render }) => {
+        render(_.appendChild(this.$refs._), function (el) {
+          try {
+            _.parentNode.replaceChild(el, _)
+          } catch (_) {}
+        })
       })
     },
     reset: function () {
