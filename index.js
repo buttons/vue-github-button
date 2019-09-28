@@ -1,6 +1,6 @@
 export default {
   name: 'github-button',
-  props: ['href', 'ariaLabel', 'title', 'dataIcon', 'dataSize', 'dataShowCount', 'dataText'],
+  props: ['href', 'ariaLabel', 'title', 'dataIcon', 'dataColorScheme', 'dataSize', 'dataShowCount', 'dataText'],
   render: function (h) {
     return h('span', [
       h('a', {
@@ -9,6 +9,7 @@ export default {
           'aria-label': this.ariaLabel,
           'title': this.title,
           'data-icon': this.dataIcon,
+          'data-color-scheme': this.dataColorScheme,
           'data-size': this.dataSize,
           'data-show-count': this.dataShowCount,
           'data-text': this.dataText
