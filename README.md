@@ -15,3 +15,6 @@ export default {
 }
 </script>
 ```
+
+## Install
+`npm install --save vue-github-button`
