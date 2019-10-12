@@ -32,9 +32,9 @@ export default {
   },
   methods: {
     paint: function () {
+      const _ = this.$el.appendChild(document.createElement('span'))
       const _this = this
       import(/* webpackMode: "eager" */ 'github-buttons').then(function (module) {
-        const _ = _this.$el.appendChild(document.createElement('span'))
         module.render(_.appendChild(_this.$refs._), function (el) {
           try {
             _.parentNode.replaceChild(el, _)
