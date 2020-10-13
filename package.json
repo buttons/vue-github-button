@@ -3,6 +3,7 @@
   "version": "1.2.0",
   "description": "GitHub button component for Vue.js",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ntkme/vue-github-button.git"

@@ -1,4 +1,6 @@
-export default {
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'github-button',
   props: ['href', 'ariaLabel', 'title', 'dataIcon', 'dataColorScheme', 'dataSize', 'dataShowCount', 'dataText'],
   render: function (h) {
@@ -46,4 +48,4 @@ export default {
       this.$el.replaceChild(this.$refs._, this.$el.lastChild)
     }
   }
-}
+})
