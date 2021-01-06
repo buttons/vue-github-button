@@ -1,23 +1,25 @@
-import Vue from 'vue'
+import { defineComponent, h } from 'vue'
+import { hyphenate } from '@vue/shared'
 
-export default Vue.extend({
+export default defineComponent({
   name: 'github-button',
-  props: ['href', 'ariaLabel', 'title', 'dataIcon', 'dataColorScheme', 'dataSize', 'dataShowCount', 'dataText'],
-  render: function (h) {
+  props: {
+    href: String,
+    ariaLabel: String,
+    title: String,
+    dataIcon: String,
+    dataColorScheme: String,
+    dataSize: String,
+    dataShowCount: String,
+    dataText: String
+  },
+  render: function () {
+    const props = { ref: '_' }
+    for (const key in this.$props) {
+      props[hyphenate(key)] = this.$props[key]
+    }
     return h('span', [
-      h('a', {
-        attrs: {
-          'href': this.href,
-          'aria-label': this.ariaLabel,
-          'title': this.title,
-          'data-icon': this.dataIcon,
-          'data-color-scheme': this.dataColorScheme,
-          'data-size': this.dataSize,
-          'data-show-count': this.dataShowCount,
-          'data-text': this.dataText
-        },
-        ref: '_'
-      }, this.$slots.default)
+      h('a', props, this.$slots.default())
     ])
   },
   mounted: function () {
@@ -29,7 +31,7 @@ export default Vue.extend({
   updated: function () {
     this.paint()
   },
-  beforeDestroy: function () {
+  beforeUnmount: function () {
     this.reset()
   },
   methods: {

@@ -2,6 +2,16 @@
 
 ## Installation
 
+#### Vue 3
+
+``` sh
+npm install vue-github-button@next
+# OR
+yarn add vue-github-button@next
+```
+
+#### Vue 2
+
 ``` sh
 npm install vue-github-button
 # OR
