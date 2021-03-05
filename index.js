@@ -1,5 +1,5 @@
 import { defineComponent, h } from 'vue'
-import { hyphenate } from '@vue/shared'
+import { hasOwn, hyphenate } from '@vue/shared'
 
 export default defineComponent({
   name: 'github-button',
@@ -19,7 +19,9 @@ export default defineComponent({
       props[hyphenate(key)] = this.$props[key]
     }
     return h('span', [
-      h('a', props, this.$slots.default())
+      hasOwn(this.$slots, 'default')
+        ? h('a', props, this.$slots.default())
+        : h('a', props)
     ])
   },
   mounted: function () {
