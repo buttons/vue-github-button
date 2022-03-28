@@ -5,17 +5,17 @@
 #### Vue 3
 
 ``` sh
-npm install vue-github-button@next
+npm install vue-github-button
 # OR
-yarn add vue-github-button@next
+yarn add vue-github-button
 ```
 
 #### Vue 2
 
 ``` sh
-npm install vue-github-button
+npm install vue-github-button@1
 # OR
-yarn add vue-github-button
+yarn add vue-github-button@1
 ```
 
 ## Usage
