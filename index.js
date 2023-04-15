@@ -37,19 +37,23 @@ export default defineComponent({
     this.reset()
   },
   methods: {
-    paint: function () {
+    paint: async function () {
+      // clear children
+      this.$el.innerHTML = ''
       const _ = this.$el.appendChild(document.createElement('span'))
       const _this = this
       import(/* webpackMode: "eager" */ 'github-buttons').then(function (module) {
         module.render(_.appendChild(_this.$refs._), function (el) {
           try {
             _.parentNode.replaceChild(el, _)
-          } catch (_) {}
+          } catch (_) { }
         })
       })
     },
     reset: function () {
-      this.$el.replaceChild(/** @type {HTMLAnchorElement} */ (this.$refs._), this.$el.lastChild)
+      if (this.$refs._) {
+        this.$el.replaceChild(/** @type {HTMLAnchorElement} */(this.$refs._), this.$el.lastChild)
+      }
     }
   }
 })
