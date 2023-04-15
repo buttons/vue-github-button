@@ -49,7 +49,7 @@ export default defineComponent({
       })
     },
     reset: function () {
-      this.$el.replaceChild(this.$refs._, this.$el.lastChild)
+      this.$el.replaceChild(/** @type {HTMLAnchorElement} */ (this.$refs._), this.$el.lastChild)
     }
   }
 })
