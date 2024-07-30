@@ -38,6 +38,9 @@ export default defineComponent({
   },
   methods: {
     paint: function () {
+      if (this.$el.lastChild !== this.$refs._) {
+        return
+      }
       const _ = this.$el.appendChild(document.createElement('span'))
       const _this = this
       import(/* webpackMode: "eager" */ 'github-buttons').then(function (module) {
