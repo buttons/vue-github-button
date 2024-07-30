@@ -52,6 +52,9 @@ export default defineComponent({
       })
     },
     reset: function () {
+      if (this.$refs._ == null) {
+        return
+      }
       this.$el.replaceChild(/** @type {HTMLAnchorElement} */ (this.$refs._), this.$el.lastChild)
     }
   }
