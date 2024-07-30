@@ -1,1 +1,1 @@
-declare module 'vue-github-button';
+declare module '@0xjacky/vue-github-button';
