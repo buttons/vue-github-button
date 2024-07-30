@@ -41,6 +41,9 @@ export default defineComponent({
       const _ = this.$el.appendChild(document.createElement('span'))
       const _this = this
       import(/* webpackMode: "eager" */ 'github-buttons').then(function (module) {
+        if (_this.$refs._ == null) {
+          return
+        }
         module.render(_.appendChild(_this.$refs._), function (el) {
           try {
             _.parentNode.replaceChild(el, _)
