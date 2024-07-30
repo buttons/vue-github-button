@@ -44,13 +44,14 @@ export default defineComponent({
       const _ = this.$el.appendChild(document.createElement('span'))
       const _this = this
       import(/* webpackMode: "eager" */ 'github-buttons').then(function (module) {
-        if (_this.$refs._ == null) {
+        if (_this.$el.lastChild !== _) {
           return
         }
         module.render(_.appendChild(_this.$refs._), function (el) {
-          try {
-            _.parentNode.replaceChild(el, _)
-          } catch (_) {}
+          if (_this.$el.lastChild !== _) {
+            return
+          }
+          _.parentNode.replaceChild(el, _)
         })
       })
     },
