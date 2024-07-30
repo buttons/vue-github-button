@@ -24,14 +24,14 @@ on:
             - published
 
 jobs:
-  build:
+  checkout:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
 
   publish-npm:
-    needs: build
+    needs: checkout
     runs-on: ubuntu-latest
     if: github.event_name == 'release'
     steps:
